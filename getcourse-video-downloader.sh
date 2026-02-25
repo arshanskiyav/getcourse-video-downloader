@@ -57,7 +57,7 @@ then
 # for rutube
 elif grep -qE '^.*\.mp4\/.*\.(ts|bin)'  "$main_playlist" 2>/dev/null
 then
-        sed -n -E "/^#/d; /^.*\.mp4\/.*\.(ts|bin)/ s|^.*mp4|${URL%.m3u8}|; p" "$main_playlist" > "$second_playlist"
+        sed -n -E "/^#/d; /^.*\.mp4\/.*\.(ts|bin)/ s|^.*mp4|${URL%%.m3u8*}|; p" "$main_playlist" > "$second_playlist"
 # for rutube
 else
 	# В плей-листе перечислены ссылки на плей-листы частей видео а разных разрешениях,
